@@ -6,6 +6,7 @@ import QRCode from 'react-qr-code';
 import IconCopy from './assets/IconCopy';
 import { ID_SIZE, SERVER_URL } from './constants';
 import IconEye from './assets/IconEye';
+import { copyToClipboard } from './utils';
 
 type Props = {
   result?: Result;
@@ -66,8 +67,8 @@ export default function ResultBody({ result, setResult }: Props) {
         <button
           className='btn btn-light btn-icon'
           title='Copy'
-          onClick={() => {
-            window.navigator.clipboard.writeText(result.urlShort);
+          onClick={async () => {
+            await copyToClipboard(result.urlShort);
             alert('Copied to clipboard!');
           }}
         >
