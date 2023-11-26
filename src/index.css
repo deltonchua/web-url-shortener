@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .col-center {
+    @apply flex flex-col gap-6;
+  }
+
+  .btn {
+    @apply font-medium px-3 py-2 rounded-xl cursor-pointer disabled:cursor-not-allowed transition-colors;
+  }
+
+  .btn-dark {
+    @apply bg-zinc-800 text-zinc-100 hover:bg-zinc-800/90;
+  }
+
+  .btn-light {
+    @apply bg-zinc-200 hover:bg-zinc-300;
+  }
+
+  .btn-icon {
+    @apply flex items-center gap-2;
+  }
+}
